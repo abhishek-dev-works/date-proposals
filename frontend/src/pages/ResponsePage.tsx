@@ -40,10 +40,10 @@ const ResponsePage = () => {
               <strong>Your Question</strong>: {data?.question}
             </Typography>
             <Typography variant="h6">
-              <strong>Her answer is</strong> : {data?.answer && "Yes"}
+              <strong>Their answer is</strong> : {data?.answer && "Yes"}
             </Typography>
             <Typography variant="h6">
-              <strong>No. of times she tried saying "No"</strong> :{" "}
+              <strong>No. of times they tried saying "No"</strong> :{" "}
               {data?.hoverOnNo}
             </Typography>
           </div>
