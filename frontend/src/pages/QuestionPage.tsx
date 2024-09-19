@@ -91,39 +91,48 @@ const QuestionPage = () => {
     <div className="wrapper">
       <Box>
         <Loader open={loading} />
-        <Typography variant="h3" margin={2}>
-          Ask Out is a free website for everyone to ask their crush on a date in
-          a cute way.
-        </Typography>
-        <Typography variant="h4">Here's just a few details we need</Typography>
+        <Box sx={{
+              width: '80%',
+              margin: '44px auto',
+              backgroundColor: 'rgba(255, 255, 255, 0.7)',
+              borderRadius: '10px',
+              boxShadow: '3px 3px rgba(0, 0, 0, 0.2)',
+              color: 'slategray',
+        }}>
+          <Typography variant="h3" margin={2} fontSize={"2.8vmax"}>
+            Ask Out is a free website for everyone to ask their crush on a date
+            in a cute way.
+          </Typography>
+          <Typography variant="h4" fontSize={"2.3vmax"}>
+            Here's just a few details we need
+          </Typography>
+        </Box>
         <Box
           sx={{
-            width: "100vw",
             padding: 3,
-            display: "-webkit-flex",
-            alignItems: "center",
-            justifyContent: "center",
           }}
         >
           <form
             onSubmit={handleSubmit}
-            style={{ display: "grid", width: "50vw" }}
+            style={{ display: "grid", maxWidth: '80vw', margin: "0 auto", backgroundColor: "#fefefe" }}
           >
             <TextField
               label="Name"
               placeholder="Enter your name"
-              sx={{ margin: "5px" }}
+              sx={{ margin: "5px"}}
               onChange={(e) => setName(e.target.value)}
               value={name}
+              required
             />
             <TextField
               label="Question"
               placeholder="Enter your question"
-              sx={{ margin: "5px" }}
+              sx={{ margin: "5px"}}
               onChange={(e) => setQuestion(e.target.value)}
               value={question}
+              required
             />
-            <Button type="submit" sx={{ margin: "5px" }} variant="contained">
+            <Button type="submit" sx={{ backgroundColor: "#ff4587", margin: "10px auto", maxWidth: 200 }} variant="contained">
               Generate Link
             </Button>
           </form>
