@@ -162,7 +162,6 @@ const AnswerPage = () => {
                 </Button>
                 <Button
                   variant="contained"
-                  onClick={() => setAnswer(false)}
                   className={classes.button}
                   onMouseOver={onHover}
                   disabled={disableButton}
