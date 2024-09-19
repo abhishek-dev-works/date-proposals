@@ -38,6 +38,7 @@ const AnswerPage = () => {
   const wrapperRef = React.useRef<HTMLDivElement>(null);
   const noBtnRef = React.useRef<HTMLButtonElement>(null);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [disableButton, setDisableButton] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
@@ -87,6 +88,7 @@ const AnswerPage = () => {
       alert("There was an error submitting the answer!");
       return;
     } else {
+      setDisableButton(true);
       setAnswer(true);
       setLoading(false);
       setTimeout(() => {
@@ -154,6 +156,7 @@ const AnswerPage = () => {
                   variant="contained"
                   type="submit"
                   className={classes.button}
+                  disabled={disableButton}
                 >
                   Yes
                 </Button>
@@ -162,6 +165,7 @@ const AnswerPage = () => {
                   onClick={() => setAnswer(false)}
                   className={classes.button}
                   onMouseOver={onHover}
+                  disabled={disableButton}
                   ref={noBtnRef}
                 >
                   No
