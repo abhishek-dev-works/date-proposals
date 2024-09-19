@@ -90,6 +90,7 @@ const QuestionPage = () => {
   return (
     <div className="wrapper">
       <Box>
+        <Loader open={loading} />
         <Typography variant="h3" margin={2}>
           Ask Out is a free website for everyone to ask their crush on a date in
           a cute way.
@@ -128,7 +129,6 @@ const QuestionPage = () => {
           </form>
         </Box>
       </Box>
-      <Loader open={loading} />
       <Dialogue open={open} onClose={() => setOpen(false)} urls={urls} />
     </div>
   );

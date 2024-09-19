@@ -12,6 +12,8 @@ const Loader = ({ open }: { open: boolean }) => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            position: "fixed",
+            zIndex: 1000,
           }}
         >
           <CircularProgress color="secondary" size={70} />
