@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Button, CircularProgress } from "@mui/material";
+import { Button, CircularProgress, Typography } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 import { addNewAnswer, getAnswer } from "../services/questionServices";
 import Loader from "../components/Loader";
@@ -16,7 +16,7 @@ const useStyles = makeStyles()({
   },
   button: {
     margin: "10px",
-    backgroundColor: "#f50057",
+    backgroundColor: "#ff4587",
   },
   image: {
     width: "100%",
@@ -129,27 +129,33 @@ const AnswerPage = () => {
   };
 
   const onTouchMove = (event) => {
-    setHoverCount(prev => prev + 1);
-    
+    setHoverCount((prev) => prev + 1);
+
     const wrapperRect = wrapperRef.current?.getBoundingClientRect();
     const noBtnRect = noBtnRef.current?.getBoundingClientRect();
-    
+
     const touchX = event.touches[0].clientX;
     const touchY = event.touches[0].clientY;
-  
+
     // Calculate the safe distance from the current touch position
     const safeDistance = 50; // Adjust this value as needed
-  
+
     let randomX, randomY;
     do {
       // Random position within the wrapper
-      randomX = Math.floor(Math.random() * ((wrapperRect?.width ?? 0) - (noBtnRect?.width ?? 0)) / 1.3);
-      randomY = Math.floor(Math.random() * ((wrapperRect?.height ?? 0) - (noBtnRect?.height ?? 0)));
+      randomX = Math.floor(
+        (Math.random() *
+          ((wrapperRect?.width ?? 0) - (noBtnRect?.width ?? 0))) /
+          1.3
+      );
+      randomY = Math.floor(
+        Math.random() * ((wrapperRect?.height ?? 0) - (noBtnRect?.height ?? 0))
+      );
     } while (
-      Math.abs(randomX - touchX) < safeDistance || 
+      Math.abs(randomX - touchX) < safeDistance ||
       Math.abs(randomY - touchY) < safeDistance
     );
-  
+
     // Move the button
     if (noBtnRef.current) {
       noBtnRef.current.style.position = "absolute";
@@ -157,18 +163,27 @@ const AnswerPage = () => {
       noBtnRef.current.style.top = `${randomY}px`;
     }
   };
-  
 
   return (
     <div className={classes.wrapper} id="container" ref={wrapperRef}>
-      {true && (
-        <Loader open={loading}/>
-      )}
+      {<Loader open={loading} relative/>}
       {!answerSubmitted ? (
         <>
-          <div style={{ padding: "2em 0" }}>
-            <h1>{userName} would like to ask you something</h1>
-            <strong><h3>{question}</h3></strong>
+          <div
+            style={{
+              padding: "2em 0",
+              backgroundColor: "rgba(255, 255, 255, 0.7)",
+              borderRadius: "10px",
+              boxShadow: "3px 3px rgba(0, 0, 0, 0.2)",
+              color: "slategray",
+            }}
+          >
+            <Typography variant="h3" fontSize={"2.6vmax"}>
+              {userName} would like to ask you something
+            </Typography>
+            <strong>
+              <Typography fontSize={"2vmax"} color="#ec10a0">{question}</Typography>
+            </strong>
           </div>
           <form onSubmit={handleSubmit}>
             <div>
@@ -197,6 +212,10 @@ const AnswerPage = () => {
                   onMouseOver={onHover}
                   disabled={disableButton}
                   onTouchMove={onTouchMove}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onHover();
+                  }}
                   ref={noBtnRef}
                 >
                   No

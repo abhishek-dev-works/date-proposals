@@ -1,7 +1,8 @@
 import { CircularProgress } from "@mui/material";
+import { relative } from "path";
 import React from "react";
 
-const Loader = ({ open }: { open: boolean }) => {
+const Loader = ({ open, relative }: { open: boolean, relative?: boolean }) => {
   return (
     <>
       {open && (
@@ -12,9 +13,10 @@ const Loader = ({ open }: { open: boolean }) => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            position: "fixed",
+            position: relative? "relative": "fixed",
             zIndex: 1000,
           }}
+          id="loader"
         >
           <CircularProgress color="secondary" size={70} />
         </div>
