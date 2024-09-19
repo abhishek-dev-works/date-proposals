@@ -4,11 +4,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+  width: 100vw;
   text-wrap: wrap;
   overflow: hidden;
-}
-
-h2:focus{
-  cursor: none;
 }
 
