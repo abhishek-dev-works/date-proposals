@@ -128,6 +128,37 @@ const AnswerPage = () => {
     }
   };
 
+  const onTouchMove = (event) => {
+    setHoverCount(prev => prev + 1);
+    
+    const wrapperRect = wrapperRef.current?.getBoundingClientRect();
+    const noBtnRect = noBtnRef.current?.getBoundingClientRect();
+    
+    const touchX = event.touches[0].clientX;
+    const touchY = event.touches[0].clientY;
+  
+    // Calculate the safe distance from the current touch position
+    const safeDistance = 50; // Adjust this value as needed
+  
+    let randomX, randomY;
+    do {
+      // Random position within the wrapper
+      randomX = Math.floor(Math.random() * ((wrapperRect?.width ?? 0) - (noBtnRect?.width ?? 0)) / 1.3);
+      randomY = Math.floor(Math.random() * ((wrapperRect?.height ?? 0) - (noBtnRect?.height ?? 0)));
+    } while (
+      Math.abs(randomX - touchX) < safeDistance || 
+      Math.abs(randomY - touchY) < safeDistance
+    );
+  
+    // Move the button
+    if (noBtnRef.current) {
+      noBtnRef.current.style.position = "absolute";
+      noBtnRef.current.style.left = `${randomX}px`;
+      noBtnRef.current.style.top = `${randomY}px`;
+    }
+  };
+  
+
   return (
     <div className={classes.wrapper} id="container" ref={wrapperRef}>
       {true && (
@@ -162,10 +193,10 @@ const AnswerPage = () => {
                 </Button>
                 <Button
                   variant="contained"
-                  onClick={() => setAnswer(false)}
                   className={classes.button}
                   onMouseOver={onHover}
                   disabled={disableButton}
+                  onTouchMove={onTouchMove}
                   ref={noBtnRef}
                 >
                   No
