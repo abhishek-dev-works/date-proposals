@@ -2,42 +2,155 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="An interactive and fun way to ask your crush out! Create and share playful date proposals."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Date ?</title>
+    <!-- SEO Keywords -->
+    <meta
+      name="keywords"
+      content="date, ask crush out, fun proposals, interactive date, playful questions, ask out app"
+    />
+
+    <!-- Open Graph for social media sharing -->
+    <meta property="og:title" content="Date Proposal - Ask Your Crush Out" />
+    <meta
+      property="og:description"
+      content="Use this playful app to propose a date to your crush in a fun and interactive way. Check it out!"
+    />
+    <meta
+      property="og:image"
+      content="https://date-proposals-ke1i.vercel.app/og-image.png"
+    />
+    <meta property="og:url" content="https://date-proposals-ke1i.vercel.app/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card for better Twitter integration -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Date Proposal - Ask Your Crush Out" />
+    <meta
+      name="twitter:description"
+      content="A fun and interactive way to ask your crush out. Propose a date with playful questions!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://date-proposals-ke1i.vercel.app/og-image.png"
+    />
+
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Your Name" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="rating" content="general" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" href="./favicon.ico" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- Charset and Mobile Responsiveness -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon and Icons -->
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="apple-touch-icon" href="./favicon.ico" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000" />
+
+    <!-- SEO - Description and Keywords -->
+    <meta
+      name="description"
+      content="An interactive and fun way to ask your crush out! Create and share playful date proposals."
+    />
+    <meta
+      name="keywords"
+      content="date proposal, fun dating app, ask crush out, playful proposal, ask out app, dating games"
+    />
+
+    <!-- Social Media - Open Graph Tags for Facebook, LinkedIn, etc. -->
+    <meta property="og:title" content="Date Proposal - Ask Your Crush Out" />
+    <meta
+      property="og:description"
+      content="Use this playful app to propose a date to your crush in a fun and interactive way. Check it out!"
+    />
+    <meta
+      property="og:image"
+      content="https://date-proposals-ke1i.vercel.app/og-image.png"
+    />
+    <meta property="og:url" content="https://date-proposals-ke1i.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Date Proposal App" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Date Proposal - Ask Your Crush Out" />
+    <meta
+      name="twitter:description"
+      content="A fun and interactive way to ask your crush out. Propose a date with playful questions!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://date-proposals-ke1i.vercel.app/og-image.png"
+    />
+    <meta name="twitter:site" content="@YourTwitterHandle" />
+    <meta name="twitter:creator" content="@YourTwitterHandle" />
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="author" content="Your Name" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+
+    <!-- Verification Tags (Optional, depending on usage) -->
+    <meta
+      name="google-site-verification"
+      content="your-google-site-verification-code"
+    />
+    <meta
+      name="bing-site-verification"
+      content="your-bing-site-verification-code"
+    />
+
+    <!-- Canonical Tag (Helps with duplicate content) -->
+    <link rel="canonical" href="https://date-proposals-ke1i.vercel.app/" />
+
+    <!-- Dublin Core Metadata (Optional) -->
+    <meta name="DC.title" content="Date Proposal - Ask Your Crush Out" />
+    <meta name="DC.creator" content="Your Name" />
+    <meta
+      name="DC.description"
+      content="An app to propose a fun date to your crush with playful questions!"
+    />
+    <meta name="DC.language" content="en" />
+    <meta
+      name="DC.subject"
+      content="date proposal, ask crush out, fun dating"
+    />
+
+    <!-- Preload and Prefetch Resources for Better Performance -->
+    <link
+      rel="preload"
+      href="https://date-proposals-ke1i.vercel.app/og-image.png"
+      as="image"
+    />
+    <link rel="dns-prefetch" href="//date-proposals-ke1i.vercel.app" />
+
+    <!-- Title -->
+    <title>Date</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
