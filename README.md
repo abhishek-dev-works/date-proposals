@@ -8,7 +8,7 @@
 
 <h1>Date Proposal App</h1>
 
-<p><strong><a href="https://date-proposals-ke1i.vercel.app/">Live Demo</a></strong></p>
+<p><strong><a href="https://date-proposals-ke1i.vercel.app/" target="_blank">Live Demo</a></strong></p>
 
 <p><strong>Date Proposal App</strong> is a fun and interactive web application where users can ask and answer date-related questions. The "Yes" and "No" buttons add a playful element, with the "No" button moving around when hovered over to make it harder to click!</p>
 
